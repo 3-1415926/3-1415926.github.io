@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <style>
+      table {
+        height: 99vh;
+        width: calc(99vh / var(--proportion));
+        border-collapse: collapse;
+        margin: auto;
+        line-height: 0;
+        table-layout: fixed;
+        text-align: center;
+        font-size: calc(70vh / var(--density));
+      }
+      td { padding-top: calc(20vh / var(--density)) }
+      td.b { border-bottom: 1px solid black }
+      td.r { border-right:  1px solid black }
+      td.l { border-left:   1px solid black }
+      td.t { border-top:    1px solid black }
+    </style>
+  </head>
+  <body>
+    <script>
+      const characters = [
+        ['\u{1f42d}', '\u{1f9c0}'],
+        ['\u{1f423}', '\u{1f413}'],
+        ['\u{1f431}', '\u{1f41f}'],
+        ['\u{1f41b}', '\u{1f98b}'],
+        ['\u{1f987}', '\u{1f335}'],
+        ['\u{26bd}',  '\u{1f94e}'],
+        ['\u{1f31d}', '\u{1f319}'],
+        ['\u{1f41d}', '\u{1f3f5}'],
+        ['\u{1f326}', '\u{1f308}'],
+        ['\u{2603}',  '\u{2744}' ],
+        ['\u{1f3aa}', '\u{1f939}'],
+        ['\u{1f3d2}', '\u{1f945}'],
+        ['\u{1f436}', '\u{1f9b4}'],
+      ];
+
+      const proportion = 11 / 8.5;
+      const params = new URLSearchParams(window.location.search);
+
+      const density = parseFloat(params.get('density') ?? 30);
+      const rows = Math.round(density * Math.sqrt(proportion));
+      const columns = Math.round(density / Math.sqrt(proportion));
+      const shifts = [{r:-1, c:0}, {r:0, c:-1}, {r:+1, c:0}, {r:0, c:+1}];
+      document.body.style.setProperty('--proportion', proportion);
+      document.body.style.setProperty('--density', density);
+
+      var characterIdx = parseInt(params.get('character')
+          ?? Math.floor(Math.random() * characters.length));
+      characterIdx = characterIdx % characters.length;
+      if (characterIdx < 0) characterIdx += characters.length;
+      const [startCharacter, endCharacter] = characters[characterIdx];
+
+      let grid = Array.from({length: rows}, _ =>
+          Array.from({length: columns}, _ => ({
+        visited: false,
+        rightWall: true,
+        bottomWall: true,
+      })));
+      let queue = [{cell: {
+        r:Math.floor(Math.random() * rows),
+        c:Math.floor(Math.random() * columns),
+      }, from: null}];
+
+      let queueIdx;
+      while (queue.length > 0) {
+        if (queueIdx == null) {
+          queueIdx = Math.floor(Math.random() * queue.length);
+        }
+        const {cell, from} = queue[queueIdx];
+        if (queueIdx < queue.length - 1) {
+          queue[queueIdx] = queue.pop();
+        } else {
+          queue.pop();
+        }
+        queueIdx = null;
+
+        if (grid[cell.r][cell.c].visited) continue;
+        grid[cell.r][cell.c].visited = true;
+        if (from != null) {
+          if (cell.r != from.r) {
+            grid[Math.min(cell.r, from.r)][from.c].bottomWall = false;
+          } else {
+            grid[from.r][Math.min(cell.c, from.c)].rightWall = false;
+          }
+        }
+
+        const oldLength = queue.length;
+        for (let shiftIdx = 0; shiftIdx < shifts.length; shiftIdx++) {
+          const to = {
+            r:cell.r + shifts[shiftIdx].r,
+            c:cell.c + shifts[shiftIdx].c,
+          };
+          if (to.r < 0 || to.r >= rows || to.c < 0 || to.c >= columns) continue;
+          if (grid[to.r][to.c].visited) continue;
+          queue.push({cell: to, from: cell});
+        }
+        if (queue.length > oldLength) {
+          queueIdx = Math.floor(
+            Math.random() * (queue.length - oldLength) + oldLength);
+        }
+      }
+
+      let longestPath = {length: 0, start: null, end: null};
+      function getLongestPath(cell, from) {
+        let leafPaths = [];
+        for (let shiftIdx = 0; shiftIdx < shifts.length; shiftIdx++) {
+          const to = {
+            r:cell.r + shifts[shiftIdx].r,
+            c:cell.c + shifts[shiftIdx].c,
+          };
+          if (to.r < 0 || to.r >= rows || to.c < 0 || to.c >= columns) continue;
+          if (from != null && to.r == from.r && to.c == from.c) continue;
+          if (to.r != cell.r) {
+            if (grid[Math.min(to.r, cell.r)][cell.c].bottomWall) continue;
+          } else {
+            if (grid[cell.r][Math.min(to.c, cell.c)].rightWall) continue;
+          }
+          leafPaths.push(getLongestPath(to, cell));
+        }
+        leafPaths.sort(
+          (a, b) => a.length < b.length ? 1 : a.length > b.length ? -1 : 0);
+        if (leafPaths.length == 0) {
+          return {length: 0, leaf: cell};
+        }
+        if (leafPaths.length == 1
+            && leafPaths[0].length + 1 > longestPath.length) {
+          longestPath = {
+            length: leafPaths[0].length + 1,
+            start: cell,
+            end: leafPaths[0].leaf,
+          };
+        }
+        if (leafPaths.length > 1
+            && leafPaths[0].length + leafPaths[1].length + 2
+            > longestPath.length) {
+          longestPath = {
+            length: leafPaths[0].length + leafPaths[1].length + 2,
+            start: leafPaths[0].leaf,
+            end: leafPaths[1].leaf,
+          };
+        }
+        return {length: leafPaths[0].length + 1, leaf: leafPaths[0].leaf};
+      }
+      getLongestPath({r:0, c:0});
+
+      let table = document.createElement('table');
+      for (var i = 0; i < rows; i++) {
+        let tr = document.createElement('tr');
+        table.appendChild(tr);
+        for (var j = 0; j < columns; j++) {
+          let td = document.createElement('td');
+          if (i == 0) td.classList.add('t');
+          if (j == 0) td.classList.add('l');
+          if (grid[i][j].bottomWall) td.classList.add('b');
+          if (grid[i][j].rightWall) td.classList.add('r');
+          var span = null;
+          if (longestPath.start.r == i && longestPath.start.c == j) {
+            span = document.createElement('span');
+            span.innerText = startCharacter;
+          } else if (longestPath.end.r == i && longestPath.end.c == j) {
+            span = document.createElement('span');
+            span.innerText = endCharacter;
+          }
+          if (span != null) td.appendChild(span);
+          tr.appendChild(td);
+        }
+      }
+      document.body.appendChild(table);
+    </script>
+  </body>
+</html>
