@@ -4,20 +4,20 @@
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700" rel="stylesheet">
     <style>
-      html { font-family: 'Nunito', sans-serif; font-size: 1rem;}
+      html { font-family: 'Nunito', sans-serif; font-size: 1rem; }
       @supports not (text-align-last: justify) {
         body { font-size: .96rem; }
       }
-      body>div { margin: auto; width: 8in; background-color: white; }
+      body>div { margin: auto; width: 8in; }
       sup { display: inline-block; width: 1.8ch; }
       ul { margin-top: 0; margin-bottom: .2rem; padding-left: 20px; }
-      .city { font-style: italic; color: #808080; }
+      .city { color: #808080; font-style: italic; }
       .columns { display: flex; }
       .columns>:not(.nogrow) { flex: 1 0 0; }
       .columns>:not(:last-child) { margin-right: 1rem; }
       .company { font-size: 110%; font-weight: bold; margin-bottom: .1rem; }
       .contact { color: #808080; font-size: 120%; }
-      .dates { font-weight: lighter; white-space: nowrap;}
+      .dates { font-weight: lighter; }
       .header {
         color: #00aa44;
         font-size: 110%;
@@ -29,16 +29,15 @@
         align-items: baseline;
         display: flex;
         justify-content: space-between;
+        white-space: nowrap;
       }
-      .leaderdots { display: flex; align-items: baseline; }
-      .leaderdots>hr {
+      .justify>hr {
         border: none;
         border-top: 1px dotted black;
         color: #808080;
         flex: 1 0 0;
         margin: 1rem .2rem 0;
       }
-      .leaderdots>:not(hr) { flex: 0 0 auto; }
       .nogrow { flex: 0 0 auto; }
       .rows {
         display: flex;
@@ -68,7 +67,7 @@
             <span class="company">Google</span>
             <span class="city">New York, NY</span>
           </div>
-          <div class="leaderdots">
+          <div class="justify">
             YouTube Music<hr/>
             <span class="dates">Oct'18 &ndash; present</span>
           </div>
@@ -77,7 +76,7 @@
             <li>Chrome extension for data collection thereof</li>
             <li>Matrix factorization applications for radio recs</li>
           </ul>
-          <div class="leaderdots">
+          <div class="justify">
             <span><a href="https://magenta.tensorflow.org/">Magenta</a> (ML ninja rotation)</span><hr/>
             <span class="dates">Jan'18 &ndash; Oct'18</span>
           </div>
@@ -86,7 +85,7 @@
             <li>Piano synthesis via a generative speech model</li>
             <li>Predicting melody harmonization</li>
           </ul>
-          <div class="leaderdots">
+          <div class="justify">
             Google Maps<hr/>
             <span class="dates">Oct'14 &ndash; Jan'18</span>
           </div>
@@ -99,14 +98,14 @@
             <span class="company">Microsoft</span>
             <span class="city">Redmond, WA</span>
           </div>
-          <div class="leaderdots">
+          <div class="justify">
             .NET native toolchain<hr/>
             <span class="dates">May'14 &ndash; Sep'14</span>
           </div>
           <ul>
             <li>Making managed apps compile and run in native</li>
           </ul>
-          <div class="leaderdots">
+          <div class="justify">
             Managed Languages<hr/>
             <span class="dates">Sep'12 &ndash; May'14</span>
           </div>
@@ -114,7 +113,7 @@
             <li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">Async debugging</a> improvements in Visual Studio</li>
             <li>Testing new "<a href="https://github.com/dotnet/roslyn/wiki/Roslyn+Overview">Roslyn</a>" C# and VB compiler</li>
           </ul>
-          <div class="leaderdots">
+          <div class="justify">
             Visual Studio, Project & Build<hr/>
             <span class="dates">Oct'11 &ndash; Sep'12</span>
           </div>
@@ -127,7 +126,7 @@
             <span class="company">Deutsche Bank</span>
             <span class="city">Saint-Petersburg, RU</span>
           </div>
-          <div class="leaderdots">
+          <div class="justify">
             AVP, Global Tech Capital<hr/>
             <span class="dates">Aug'11 &ndash; Sep'11</span>
           </div>
@@ -140,7 +139,7 @@
             <span class="company">Broadridge</span>
             <span class="city">Saint-Petersburg, RU</span>
           </div>
-          <div class="leaderdots">
+          <div class="justify">
             Portfolio Master<hr/>
             <span class="dates">Aug'08 &ndash; Jul'11</span>
           </div>
@@ -150,7 +149,7 @@
           </ul>
         </div>
         <div>
-          <div class="leaderdots">
+          <div class="justify">
             <span class="company">Prostobank</span><hr/>
             <span>
               <span class="city">Kyiv, UA&nbsp;</span>
@@ -162,7 +161,7 @@
           </ul>
         </div>
         <div>
-          <div class="leaderdots">
+          <div class="justify">
             <span class="company">Freelancer</span><hr/>
             <span class="dates">Mar'07 &ndash; Nov'07</span>
           </div>
@@ -171,7 +170,7 @@
           </ul>
         </div>
         <div>
-          <div class="leaderdots">
+          <div class="justify">
             <span class="company">i.LEVEL</span><hr/>
             <span>
               <span class="city">London, UK&nbsp;</span>
@@ -183,7 +182,7 @@
           </ul>
         </div>
         <div>
-          <div class="leaderdots">
+          <div class="justify">
             <span class="company">Anahoret</span><hr/>
             <span>
               <span class="city">Donetsk, UA&nbsp;</span>
@@ -248,7 +247,7 @@
           Olympiads in Informatics:
           <ul>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 International<hr/>                
                 <span>
                   <span class="city">South Korea&nbsp;</span>
@@ -256,7 +255,7 @@
                 </span>
               </div>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 National<hr/>
                 <span>
                   &#x1f948;2<sup>nd</sup><span class="dates"> &ndash; '02,</span>
@@ -265,7 +264,7 @@
               </div>
             </li>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 Regional<hr/>
                 <span>
                   &#x1f947;1<sup>st</sup><span class="dates"> &ndash; '02,</span>
@@ -278,7 +277,7 @@
           ACM ICPC:
           <ul>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 SE Europe<hr/>
                 <span>
                   <span class="city">Romania&nbsp;</span>
@@ -288,7 +287,7 @@
               </div>
             </li>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 National Cup<hr/>
                 <span> 
                   &#x1f3c6;1<sup>st</sup><span class="dates"> &ndash; '03,</span>
@@ -297,7 +296,7 @@
               </div>
             </li>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 National<hr/>
                 <span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '04,</span>
@@ -307,7 +306,7 @@
               </div>
             </li>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 Regional<hr/>
                 <span>
                   &#x1f947;1<sup>st</sup><span class="dates"> &ndash; '04,</span>
@@ -319,13 +318,13 @@
           <i>Problem setter:</i>
           <ul>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 National Olympiad in Informatics<hr/>
                 <span class="dates">2003, '05, '07</span>
               </div>
             </li>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 National Cup<hr/>
                 <span class="dates">2003, '04</span>
               </div>
@@ -340,7 +339,7 @@
           </div>
           <ul>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 Computer Engineering<hr/>
                 <span class="dates">2008&ndash;10</span>
               </div>
@@ -352,7 +351,7 @@
           </div>
           <ul>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 <i>General Medicine</i><hr/>
                 <span class="dates">2004&ndash;08</span>
               </div>
@@ -364,12 +363,12 @@
           </div>
           <ul>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 Computer Engineering<hr/>
                 <span class="dates">2004&ndash;07</span>
               </div>
             <li>
-              <div class="leaderdots">
+              <div class="justify">
                 System Programming<hr/>
                 <span class="dates">2002&ndash;04</span>
               </div>
