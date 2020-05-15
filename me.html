@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700" rel="stylesheet">
     <style>
-      html { font-family: 'Nunito', sans-serif; font-size: 1rem; }
+      html { font-family: 'Nunito', sans-serif; font-size: .167in; }
       @supports not (text-align-last: justify) {
         body { font-size: .96rem; }
       }
       body>div { margin: auto; min-width: 8in; max-width: 8in; }
+      li:not(.multiline) { white-space: nowrap; }
       sup { display: inline-block; width: 1.8ch; }
       ul { margin-top: 0; margin-bottom: .2rem; padding-left: 2ch; }
       .city { color: #808080; font-style: italic; }
@@ -90,7 +91,7 @@
             <span class="dates">Oct'14 &ndash; Jan'18</span>
           </div>
           <ul>
-            <li>Designed, launched, owned several systems for routing and processing user edits to Maps</li>
+            <li class="multiline">Designed, launched, owned several systems for routing and processing user edits to Maps</li>
           </ul>
         </div>
         <div>
@@ -203,7 +204,7 @@
           </div>
           <div class="header">Paper trail</div>
           <ul>
-            <li>
+            <li class="multiline">
               Enabling Factorized Piano Music Modeling and Generation with the <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO Dataset</a>.<br/>
               [<a href="https://arxiv.org/abs/1810.12247">arXiv:1810.12247</a>] &mdash; ICLR'19 oral: <i><b>top 1.5%</b></i>
             </li>
