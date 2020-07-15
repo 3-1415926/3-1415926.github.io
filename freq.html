@@ -1,0 +1,90 @@
+<html>
+  <body>
+    <div name='voice'>
+      <input type='number' min=20 max=20000 step=1
+          onchange='changeFreq(this.parentNode)'/>
+      <input type='checkbox'
+          onchange='maybeInitCtx(); toggleVoice(this.parentNode)'/>
+    </div>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const freq_params = params.getAll('hz');
+      const num_voices = Math.max(5, freq_params.length);
+      
+      var audioCtx = null;
+      var gainNode = null;
+      var oscillators = new Array(num_voices);
+
+      let template = document.getElementsByName('voice')[0];
+      for (let i = 0; i < num_voices; i++) {
+        voice = template.cloneNode(true);
+        voice.idx = i;
+        for (let j = 0; j < voice.children.length; j++) {
+          let input = voice.children[j];
+          if (input.tagName.toLowerCase() != 'input') continue;
+          switch (input.type) {
+            case 'number': voice.number = input; break;
+            case 'checkbox': voice.checkbox = input; break;
+          }
+        }
+        if (i < freq_params.length) {
+          voice.number.value = freq_params[i];
+        } else {
+          voice.checkbox.disabled = true;
+        }
+        document.body.appendChild(voice);
+      }
+      document.body.removeChild(template);
+
+      function maybeInitCtx() {
+        if (audioCtx == null) {
+          audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+          gainNode = audioCtx.createGain();
+          gainNode.gain.value = Math.min(.5 / Math.max(num_voices, 5));
+          gainNode.connect(audioCtx.destination);
+        }
+      }
+
+      function start(idx, freq) {
+        if (oscillators[idx] == null) {
+          oscillators[idx] = audioCtx.createOscillator();
+          oscillators[idx].type = 'sine';
+          oscillators[idx].connect(gainNode);
+          oscillators[idx].frequency.value = freq;
+          oscillators[idx].start()
+        } else {
+          oscillators[idx].frequency.value = freq;
+        }
+      }
+
+      function stop(idx) {
+        if (oscillators[idx] != null) {
+          oscillators[idx].stop();
+          oscillators[idx].disconnect(gainNode);
+          oscillators[idx] = null;
+        }
+      }
+
+      function changeFreq(voice) {
+        let freq = parseInt(voice.number.value);
+        if (!Number.isNaN(freq)) {
+          if (voice.checkbox.checked)
+            start(voice.idx, freq);
+          voice.checkbox.disabled = false;
+        } else {
+          voice.checkbox.checked = false;
+          stop(voice.idx);
+          voice.checkbox.disabled = true;
+        }
+      }
+
+      function toggleVoice(voice) {
+        if (voice.checkbox.checked) {
+          start(voice.idx, parseInt(voice.number.value));
+        } else {
+          stop(voice.idx);
+        }
+      }
+    </script>
+  </body>
+</html>
