@@ -46,11 +46,10 @@
       document.body.style.setProperty('--proportion', proportion);
       document.body.style.setProperty('--density', density);
 
-      var characterIdx = parseInt(params.get('character')
-          ?? Math.floor(Math.random() * characters.length));
-      characterIdx = characterIdx % characters.length;
-      if (characterIdx < 0) characterIdx += characters.length;
-      const [startCharacter, endCharacter] = characters[characterIdx];
+      const [startCharacter, endCharacter] =
+          params.get('start') && params.get('end')
+          ? [params.get('start'), params.get('end')]
+          : characters[Math.floor(Math.random() * characters.length)];
 
       let grid = Array.from({length: rows}, _ =>
           Array.from({length: columns}, _ => ({
