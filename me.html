@@ -5,9 +5,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700" rel="stylesheet">
     <style>
       html { font-family: 'Nunito', sans-serif; font-size: calc(1in / 6); }
-      @supports not (text-align-last: justify) {
+      @supports not (text-align-last: justify) { @media print {
         body { font-size: .96rem; }
-      }
+        ul { margin: 0 !important; }
+        .company {margin: 0 !important; }
+      }}
       body>div { margin: auto; min-width: 8in; max-width: 8in; }
       li:not(.multiline) { white-space: nowrap; }
       sup { display: inline-block; width: 1.8ch; }
@@ -16,14 +18,14 @@
       .columns { display: flex; }
       .columns>:not(.nogrow) { flex: 1 0 0; }
       .columns>:not(:last-child) { margin-right: 1rem; }
-      .company { font-size: 110%; font-weight: bold; margin-bottom: .1rem; }
-      .contact { color: #808080; font-size: 120%; }
-      .dates { font-weight: lighter; }
+      .company { font-size: 110%; font-weight: bold; margin-top: .3rem; }
+      .dates { font-weight: lighter; }      
+      .emoji { font-style: normal; }
       .header {
         color: #00aa44;
         font-size: 110%;
         font-weight: bold;
-        margin-bottom: .2rem;
+        margin-top: .4rem;
         text-transform: uppercase;
       }
       .justify { 
@@ -45,32 +47,42 @@
         flex-direction: column;
         justify-content: space-between;
       }
-      .subtitle { color: #00aa44; font-size: 110%; margin-bottom: .25rem; }
-      .title { font-size: 160%; font-weight: bold; }
+      .subtitle { color: #00aa44; font-size: 110%; margin: .1rem 0; }
+      .title-left { font-size: 160%; font-weight: bold; }
+      .title-right { 
+        color: #808080;
+        font-size: 120%;
+        margin-top: .55rem; 
+        text-align: right;
+      }
     </style>
   </head>
   <body>
-    <div class="justify">
-      <span class="title">Andrew Stasyuk</span>
-      <span class="contact">astas@google.com</span>
-    </div>
     <div class="columns">
       <span class="rows">
         <div>
+          <div class="title-left">Andrew Stasyuk</div>
           <div class="justify subtitle">
             <span>Senior SWE</span>
-            <span>&#x2e3b;</span>
+            <span>&mdash;</span>
             <span>ML ninja & educator</span>
-            <span>&#x2e3b;</span>
+            <span>&mdash;</span>
           </div>
-          <div class="header">Experience</div>
           <div class="justify">
             <span class="company">Google</span>
-            <span class="city">New York, NY</span>
+            <span class="city">New York, NY  <span class="emoji">&#x2192;</span> Seattle, WA <span class="emoji">&#x1f3e0;</span></span>
           </div>
           <div class="justify">
+            <a href="https://www.gradient.com/">Gradient Ventures</a><hr/>
+            <span class="dates">Jul'20 &ndash; present</span>
+          </div>
+          <ul>
+            <li class="multiline">ML research lead for <a href="https://www.typingdna.com/">TypingDNA</a>,
+              using keystroke dynamics to authenticate and predict emotions</li>
+          </ul>
+          <div class="justify">
             YouTube Music<hr/>
-            <span class="dates">Oct'18 &ndash; present</span>
+            <span class="dates">Oct'18 &ndash; Jul'20</span>
           </div>
           <ul>
             <li>Modeling track-to-track relevance in song radio</li>
@@ -78,7 +90,7 @@
             <li>Matrix factorization applications for radio recs</li>
           </ul>
           <div class="justify">
-            <span><a href="https://magenta.tensorflow.org/">Magenta</a> (ML ninja rotation)</span><hr/>
+            <span><a href="https://magenta.tensorflow.org/">Magenta</a> / ML ninja rotation</span><hr/>
             <span class="dates">Jan'18 &ndash; Oct'18</span>
           </div>
           <ul>
@@ -163,8 +175,11 @@
         </div>
         <div>
           <div class="justify">
-            <span class="company">Freelancer</span><hr/>
-            <span class="dates">Mar'07 &ndash; Nov'07</span>
+            <span class="company">Freelancer.com</span><hr/>
+            <span>
+              <span class="city"><span class="emoji">&#x1f30e;</span></span>
+              <span class="dates">Mar'07 &ndash; Nov'07</span>
+            </span>
           </div>
           <ul>
             <li>Poker probability calculator, heavily optimized</li>
@@ -197,9 +212,10 @@
       </span>
       <span class="rows">
         <div>
+          <div class="title-right">astas@google.com</div>
           <div class="justify subtitle">
             <span>Competitive programmer</span>
-            <span>&#x2e3b;</span>
+            <span>&mdash;</span>
             <span>Dropout MD</span>
           </div>
           <div class="header">Paper trail</div>
@@ -233,7 +249,7 @@
               <li>Introduction to ML</li>
             </ul>
           </div>
-          At schools:
+          K-12:
           <div class="columns">
             <ul>
               <li>Competitive programming</li>
