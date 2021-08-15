@@ -45,7 +45,7 @@
       const proportion = 11 / 8.5;
       const params = new URLSearchParams(window.location.search);
 
-      const density = parseFloat(params.get('density') ?? 30);
+      const density = parseFloat(params.get('density') ?? 40);
       const rows = Math.round(density * Math.sqrt(proportion));
       const columns = Math.round(density / Math.sqrt(proportion));
       const shifts = [{r:-1, c:0}, {r:0, c:-1}, {r:+1, c:0}, {r:0, c:+1}];
