@@ -20,6 +20,12 @@
   </head>
   <body>
     <script>
+      let hexRe = /^[0-9a-fA-F]{2,}$/;
+
+      function unicodize(s) {
+        return hexRe.test(s) ? String.fromCodePoint(parseInt(s, 16)) : s;
+      }
+
       const characters = [
         ['\u{1f42d}', '\u{1f9c0}'],
         ['\u{1f423}', '\u{1f413}'],
@@ -48,7 +54,7 @@
 
       const [startCharacter, endCharacter] =
           params.get('start') && params.get('end')
-          ? [params.get('start'), params.get('end')]
+          ? [unicodize(params.get('start')), unicodize(params.get('end'))]
           : characters[Math.floor(Math.random() * characters.length)];
 
       let grid = Array.from({length: rows}, _ =>
