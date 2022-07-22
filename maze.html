@@ -56,12 +56,16 @@
           params.get('start') && params.get('end')
           ? [unicodize(params.get('start')), unicodize(params.get('end'))]
           : characters[Math.floor(Math.random() * characters.length)];
+      const message = params.get('message');
 
       let grid = Array.from({length: rows}, _ =>
           Array.from({length: columns}, _ => ({
         visited: false,
         rightWall: true,
         bottomWall: true,
+        inSolution: false,
+        cameFrom: null,
+        letter: null,
       })));
       let queue = [{cell: {
         r:Math.floor(Math.random() * rows),
@@ -150,6 +154,50 @@
       }
       getLongestPath({r:0, c:0});
 
+      function walk(cell) {
+        for (let shiftIdx = 0; shiftIdx < shifts.length; shiftIdx++) {
+          const to = {
+            r:cell.r + shifts[shiftIdx].r,
+            c:cell.c + shifts[shiftIdx].c,
+          };
+          if (to.r < 0 || to.r >= rows || to.c < 0 || to.c >= columns) continue;
+          if (to.r != cell.r) {
+            if (grid[Math.min(to.r, cell.r)][cell.c].bottomWall) continue;
+          } else {
+            if (grid[cell.r][Math.min(to.c, cell.c)].rightWall) continue;
+          }
+          if (grid[to.r][to.c].cameFrom != null) continue;
+          grid[to.r][to.c].cameFrom = cell;
+          walk(to);
+        }
+      }
+      grid[longestPath.start.r][longestPath.start.c].cameFrom = longestPath.start
+      walk(longestPath.start);
+
+      cell = longestPath.end;
+      grid[cell.r][cell.c].inSolution = true;
+      if (message != null) {
+        messageIdx = Math.min(message.length - 1, longestPath.length - 2);
+        messageFactor = Math.max(1, (longestPath.length - 2) / message.length);
+      }
+      for (let i = longestPath.length; i >= 0; i--) {
+        if (message != null && (messageIdx + .5) * messageFactor >= i) {
+          grid[cell.r][cell.c].letter = message[messageIdx--];
+        }
+        grid[cell.r][cell.c].inSolution = true;
+        cell = grid[cell.r][cell.c].cameFrom;
+      }
+      // TODO: infer alphabet from message
+      if (message != null) {
+        for (let i = 0; i < rows; i++) {
+          for (let j = 0; j < columns; j++) {
+            if (!grid[i][j].inSolution && Math.random() < 1 / messageFactor) {
+              grid[i][j].letter = String.fromCharCode('А'.charCodeAt(0) + Math.floor(Math.random() * 32));
+            }
+          }
+        }
+      }
+
       let table = document.createElement('table');
       for (var i = 0; i < rows; i++) {
         let tr = document.createElement('tr');
@@ -167,6 +215,9 @@
           } else if (longestPath.end.r == i && longestPath.end.c == j) {
             span = document.createElement('span');
             span.innerText = endCharacter;
+          } else if (grid[i][j].letter != null) {
+            span = document.createElement('span');
+            span.innerText = grid[i][j].letter;
           }
           if (span != null) td.appendChild(span);
           tr.appendChild(td);
