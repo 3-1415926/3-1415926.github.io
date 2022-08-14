@@ -1,12 +1,12 @@
 <html>
   <head>
-    <title>Andrew Stasyuk @ Google</title>
+    <title>Andrew Stasyuk</title>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700" rel="stylesheet">
     <style>
       html { font-family: 'Nunito', sans-serif; font-size: calc(1in / 6); }
       @supports not (text-align-last: justify) { @media print {
-        body { font-size: .96rem; }
+        body { font-size: .95rem; }
         ul { margin: 0 !important; }
         .company {margin-top: .2rem !important; }
       }}
@@ -14,7 +14,6 @@
       li:not(.multiline) { white-space: nowrap; }
       sup { display: inline-block; width: 1.8ch; }
       ul { margin-top: 0; margin-bottom: .2rem; padding-left: 2ch; }
-      .city { color: #808080; font-style: italic; }
       .columns { display: flex; }
       .columns>:not(.nogrow) { flex: 1 0 0; }
       .columns>:not(:last-child) { margin-right: 1rem; }
@@ -25,7 +24,6 @@
         color: #00aa44;
         font-size: 110%;
         font-weight: bold;
-        margin-top: .4rem;
         text-transform: uppercase;
       }
       .justify { 
@@ -42,104 +40,108 @@
         margin: 1rem .2rem 0;
       }
       .nogrow { flex: 0 0 auto; }
-      .rows {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .subtitle { color: #00aa44; font-size: 110%; margin: .1rem 0; }
-      .title-left { font-size: 160%; font-weight: bold; }
-      .title-right { 
-        color: #808080;
-        font-size: 120%;
-        margin-top: .55rem; 
-        text-align: right;
-      }
+      .place { color: #808080; font-style: italic; }
+      .rows { display: flex; flex-direction: column; justify-content: space-between; }
+      .subtitle { color: #00aa44; font-size: 110%; margin-bottom: .2rem;}
+      .title-name { font-size: 160%; font-weight: bold; }
+      .title-email { color: #808080; font-size: 120%; }
     </style>
   </head>
   <body>
+    <div class="justify">
+      <span class="title-name">Andriy Stasyuk</span>
+      <span class="title-email">and.stasyuk@gmail.com</span>
+    </div>
+    <div class="justify subtitle">
+      <span>Senior SWE</span>
+      <span>&mdash;</span>
+      <span>ML Ninja & Educator</span>
+      <span>&mdash;</span>
+      <span>Competitive Programmer</span>
+      <span>&mdash;</span>
+      <span>Dropout MD <span class="emoji">&#x2695;</span></span>
+    </div>
     <div class="columns">
-      <span class="rows">
+      <div class="rows">
         <div>
-          <div class="title-left">Andrew Stasyuk</div>
-          <div class="justify subtitle">
-            <span>Senior SWE</span>
-            <span>&mdash;</span>
-            <span>ML Ninja & Educator</span>
-            <span>&mdash;&nbsp;&nbsp;</span>
-          </div>
-          <div class="justify">
-            <span class="company">Google</span>
-            <span class="city">New York, NY  <span class="emoji">&#x2192;</span> Seattle, WA <span class="emoji">&#x1f3e0;</span></span>
-          </div>
+          <span class="company">Google</span>
           <div class="justify">
             <a href="https://www.gradient.com/">Gradient Ventures</a><hr/>
-            <span class="dates">Jul'20 &ndash; present</span>
+            <span>
+              <span class="place">Kirkland, WA&nbsp;</span>
+              <span class="dates">Jul'20 &ndash; present</span>
+            </span>
           </div>
           <ul>
-            <li>Data Scientist for <a href="https://saymine.com/">Mine</a>, user data reclaim recos</li>
-            <li class="multiline">ML research lead for <a href="https://www.typingdna.com/">TypingDNA</a>,
-              using <a href="https://public-research.typingdna.com/">keystroke dynamics</a>
-              to authenticate and <a href="https://www.typingdna.com/focus">predict emotions</a></li>
+            <li>DS / ML Eng @ <a href="https://saymine.com/">Mine</a>,
+              data reclaim recommender</li>
+            <li class="multiline">ML Research Lead @ <a href="https://www.typingdna.com/">TypingDNA</a>
+              using <a href="https://public-research.typingdna.com/">keystroke</a> dynamics to
+              <a href="https://www.typingdna.com/activelock-continuous-authentication">authenticate</a>
+              and <a href="https://www.typingdna.com/focus">predict emotions</a></li>
           </ul>
           <div class="justify">
             YouTube Music<hr/>
-            <span class="dates">Oct'18 &ndash; Jul'20</span>
+            <span>
+              <span class="place">New York, NY&nbsp;</span>
+              <span class="dates">Oct'18 &ndash; Jul'20</span>
+            </span>
           </div>
           <ul>
             <li>Modeling track-to-track relevance in song radio</li>
-            <li>Chrome extension for data collection thereof</li>
-            <li>Matrix factorization applications for radio recs</li>
+            <li>Engineering in situ data collection thereof</li>
+            <li>Collaborative filtering for radio recommendations</li>
           </ul>
           <div class="justify">
-            <span><a href="https://magenta.tensorflow.org/">Magenta</a> / ML Ninja rotation &#x1f977;</span><hr/>
+            <span><a href="https://magenta.tensorflow.org/">Magenta</a> / ML Ninja &#x1f977;</span><hr/>
             <span class="dates">Jan'18 &ndash; Oct'18</span>
           </div>
           <ul>
             <li>Aligned 200+ hours of MIDI / audio for <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a></li>
             <li>Piano synthesis via a generative speech model</li>
-            <li>Predicting melody harmonization</li>
+            <li>Reharmonization model trained on lead sheets</li>
           </ul>
           <div class="justify">
             Google Maps<hr/>
             <span class="dates">Oct'14 &ndash; Jan'18</span>
           </div>
           <ul>
-            <li>Routing and processing of user edits in Maps</li>
+            <li>Reengineering user edit routing and processing</li>
           </ul>
         </div>
         <div>
           <div class="justify">
             <span class="company">Microsoft</span>
-            <span class="city">Redmond, WA</span>
+            <span class="place">Redmond, WA</span>
           </div>
           <div class="justify">
             .NET native toolchain<hr/>
             <span class="dates">May'14 &ndash; Sep'14</span>
           </div>
           <ul>
-            <li>Making managed apps compile and run natively</li>
+            <li>Making managed apps run w/o .NET runtime</li>
           </ul>
           <div class="justify">
             Managed Languages<hr/>
             <span class="dates">Sep'12 &ndash; May'14</span>
           </div>
           <ul>
-            <li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">Async debugging</a> improvements in Visual Studio</li>
-            <li>Testing novel "<a href="https://github.com/dotnet/roslyn/wiki/Roslyn+Overview">Roslyn</a>" C# / VB compiler platform</li>
+            <li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">Async causality</a>
+              debugger in Visual Studio</li>
+            <li><a href="https://github.com/dotnet/roslyn/wiki/Roslyn+Overview">Roslyn</a>, C# / Visual Basic compiler platform</li>
           </ul>
           <div class="justify">
             Visual Studio, Project & Build<hr/>
             <span class="dates">Oct'11 &ndash; Sep'12</span>
           </div>
           <ul>
-            <li>Fuzz, scalability, endurance tests of build system</li>
+            <li>Fuzz, scalability, endurance testing</li>
           </ul>
         </div>
         <div>
           <div class="justify">
             <span class="company">Deutsche Bank</span>
-            <span class="city">Saint Petersburg, RU</span>
+            <span class="place">Saint Petersburg, RU</span>
           </div>
           <div class="justify">
             AVP, Global Tech Capital<hr/>
@@ -152,14 +154,14 @@
         <div>
           <div class="justify">
             <span class="company">Broadridge</span>
-            <span class="city">Saint Petersburg, RU</span>
+            <span class="place">Saint Petersburg, RU</span>
           </div>
           <div class="justify">
             Portfolio Master<hr/>
             <span class="dates">Aug'08 &ndash; Jul'11</span>
           </div>
           <ul>
-            <li>Derivative securities price modeling component</li>
+            <li>Derivative securities price modeling</li>
             <li>20x speedup to team build process</li>
           </ul>
         </div>
@@ -167,19 +169,19 @@
           <div class="justify">
             <span class="company">Prostobank</span><hr/>
             <span>
-              <span class="city">Kyiv, UA&nbsp;</span>
+              <span class="place">Kyiv, UA&nbsp;</span>
               <span class="dates">Oct'07 &ndash; Aug'08</span>
             </span>
           </div>
           <ul>
-            <li>Architected a data management tool for analysts</li>
+            <li>Architected a data management backend</li>
           </ul>
         </div>
         <div>
           <div class="justify">
             <span class="company">Freelancer.com</span><hr/>
             <span>
-              <span class="city"><span class="emoji">&#x1f30e;</span></span>
+              <span class="place"><span class="emoji">&#x1f30e;</span></span>
               <span class="dates">Mar'07 &ndash; Nov'07</span>
             </span>
           </div>
@@ -191,48 +193,71 @@
           <div class="justify">
             <span class="company">i.LEVEL</span><hr/>
             <span>
-              <span class="city">London, UK&nbsp;</span>
+              <span class="place">London, UK&nbsp;</span>
               <span class="dates">Nov'05 &ndash; Oct'06</span>
             </span>
           </div>
           <ul>
-            <li>Components for document management solution</li>
+            <li>Content and document management system</li>
           </ul>
         </div>
         <div>
           <div class="justify">
             <span class="company">Anahoret</span><hr/>
             <span>
-              <span class="city">Donetsk, UA&nbsp;</span>
+              <span class="place">Donetsk, UA&nbsp;</span>
               <span class="dates">Feb'04 &ndash; Jun'04</span>
             </span>
           </div>
           <ul>
-            <li>Outsourcing web frontend and backend projects</li>
+            <li>Full-stack web development</li>
           </ul>
         </div>
-      </span>
-      <span class="rows">
+      </div>
+      <div class="rows">
         <div>
-          <div class="title-right">astas@google.com</div>
-          <div class="justify subtitle">
-            <span>Competitive Programmer</span>
-            <span>&mdash;</span>
-            <span>Dropout MD</span>
-          </div>
           <div class="header">Paper trail</div>
           <ul>
             <li class="multiline">
-              Enabling Factorized Piano Music Modeling and Generation with the <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO Dataset</a>.<br/>
-              [<a href="https://arxiv.org/abs/1810.12247">arXiv:1810.12247</a>] &mdash; ICLR'19 oral: <i><b>top 1.5%</b></i>
+              Enabling Factorized Piano Music Modeling and Generation with the
+                <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a> Dataset.<br/>
+              <div class="justify">
+                <span>[<a href="https://arxiv.org/abs/1810.12247">arXiv:1810.12247</a>]</span><hr/>
+                <span><a href="https://openreview.net/forum?id=r1lYRjC9F7">ICLR'19</a> oral, <i><b>top 1.5%</b></i></span>
+              </div>
             </li>
             <li>
-              Diagnostics of State Transitions.<br/>
-              [WIPO patent <a href="https://patents.google.com/patent/WO2014159147A1">WO2014159147A1</a>]
+              <div class="columns">
+                <div>Patents:</div>
+                <div>
+                  <div class="justify">
+                    <span>
+                      <span class="emoji">&#x1f1fa;&#x1f1f8;</span>
+                      <a href="https://patents.google.com/patent/US10545852B2">US10545852B2</a>
+                    </span>
+                    <a href="https://patents.google.com/patent/US10078575B2">US10078575B2</a>
+                  </div>
+                  <div class="justify">
+                    <span>
+                      <span class="emoji">&#x1f1ea;&#x1f1fa;</span>
+                      <a href="https://patents.google.com/patent/EP2972881B1">EP2972881B1</a>
+                      &nbsp;&nbsp;
+                    </span>
+                    <span>
+                      <span class="emoji">&#x1f1e8;&#x1f1f3;</span>
+                      <a href="https://patents.google.com/patent/CN105308578B">CN105308578B</a>
+                    </span>
+                  </div>
+                  <div>
+                    <span class="emoji">&#x1f30e;</span>
+                    <a href="https://patents.google.com/patent/WO2014159147A1">WO2014159147A1</a>
+                  </div>
+                </div>
+              </div>
             </li>
             <li>
               Async Causality Chain Tracking.
-              [<a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">MSDN Feb'13</a>]
+              [<a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">MSDN</a>]
             </li>
           </ul>
         </div>
@@ -248,7 +273,7 @@
             <ul class="nogrow">
               <li>Sequence models</li>
               <li><a href="https://developers.google.com/machine-learning/data-prep">Data preparation</a></li>
-              <li>Introduction to ML</li>
+              <li><a href="https://developers.google.com/machine-learning/intro-to-ml">Introduction to ML</a></li>
             </ul>
           </div>
           K-12:
@@ -267,15 +292,15 @@
           <ul>
             <li>
               <div class="justify">
-                International<hr/>
+                <span>International <span class="emoji">&#x1f1f0;&#x1f1f7;</span></span><hr/>
                 <span>
-                  <span class="city">South Korea&nbsp;</span>
+                  <span class="place">South Korea&nbsp;</span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '02</span>
                 </span>
               </div>
             <li>
               <div class="justify">
-                National<hr/>
+                <span>National <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
                 <span>
                   &#x1f948;2<sup>nd</sup><span class="dates"> &ndash; '02,</span>
                   &#x1f948;2<sup>nd</sup><span class="dates"> &ndash; '01</span>
@@ -297,17 +322,17 @@
           <ul>
             <li>
               <div class="justify">
-                SE Europe<hr/>
+                <span>SE Europe <span class="emoji">&#x1f1f7;&#x1f1f4;</span></span><hr/>
                 <span>
-                  <span class="city">România&nbsp;</span>
+                  <span class="place">România&nbsp;</span>
                   9<sup>th</sup><span class="dates"> &ndash; '03,</span>
-                  &nbsp;&nbsp;&nbsp;10<sup>th</sup><span class="dates"> &ndash; '02</span>
+                  &nbsp;10<sup>th</sup><span class="dates"> &ndash; '02</span>
                 </span>
               </div>
             </li>
             <li>
               <div class="justify">
-                National Cup<hr/>
+                <span>National Cup <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
                 <span> 
                   &#x1f3c6;1<sup>st</sup><span class="dates"> &ndash; '03,</span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '04</span>
@@ -316,7 +341,7 @@
             </li>
             <li>
               <div class="justify">
-                National<hr/>
+                <span>National <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
                 <span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '04,</span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '03,</span>
@@ -338,23 +363,33 @@
           <ul>
             <li>
               <div class="justify">
-                National Olympiad in Informatics<hr/>
-                <span class="dates">2003, '05, '07</span>
+                <span>National Olympiad in Informatics <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
+                <span class="dates">'03, '05, '07</span>
               </div>
             </li>
             <li>
               <div class="justify">
-                National Cup<hr/>
-                <span class="dates">2003, '04</span>
+                <span>National Cup <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
+                <span class="dates">'03, '04</span>
               </div>
             </li>
           </ul>
         </div>
         <div>
+          <div class="header">Technology</div>
+          <div class="justify">
+            <span>TensorFlow</span>
+            <span>Python</span>
+            <span>C++</span>
+            <span>C#</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+        <div>
           <div class="header">Education</div>
           <div class="justify">
             NW State Technical University
-            <span class="city">S. Petersburg, RU</span>
+            <span class="place">S. Petersburg, RU</span>
           </div>
           <ul>
             <li>
@@ -366,19 +401,19 @@
           </ul>
           <div class="justify">
             Donetsk National Medical University
-            <span class="city">Donetsk, UA</span>
+            <span class="place">Donetsk, UA</span>
           </div>
           <ul>
             <li>
               <div class="justify">
-                <i>General Medicine</i><hr/>
+                <span><i>General Medicine</i> <span class="emoji">&#x2695;</span></span><hr/>
                 <span class="dates">2004&ndash;08</span>
               </div>
             </li>
           </ul>
           <div class="justify">
             Donetsk National Technical University
-            <span class="city">Donetsk, UA</span>
+            <span class="place">Donetsk, UA</span>
           </div>
           <ul>
             <li>
@@ -394,7 +429,7 @@
             </li>
           </ul>
         </div>
-      </span>
+      </div>
     </div>
   </body>
 </html>
