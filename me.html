@@ -5,15 +5,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700" rel="stylesheet">
     <style>
       html { font-family: 'Nunito', sans-serif; font-size: calc(1in / 6); }
-      @supports not (text-align-last: justify) { @media print {
-        body { font-size: .95rem; }
-        ul { margin: 0 !important; }
-        .company {margin-top: .2rem !important; }
-      }}
       body>div { margin: auto; min-width: 8in; max-width: 8in; }
       li:not(.multiline) { white-space: nowrap; }
       sup { display: inline-block; width: 1.8ch; }
-      ul { margin-top: 0; margin-bottom: .2rem; padding-left: 2ch; }
+      ul { margin: 0 0 .2rem; padding-left: 2ch; }
       .columns { display: flex; }
       .columns>:not(.nogrow) { flex: 1 0 0; }
       .columns>:not(:last-child) { margin-right: 1rem; }
@@ -21,10 +16,11 @@
       .dates { font-weight: lighter; }      
       .emoji { font-style: normal; }
       .header {
-        color: #00aa44;
+        color: #0a4;
         font-size: 110%;
         font-weight: bold;
         text-transform: uppercase;
+        margin-top: .3rem;
       }
       .justify { 
         align-items: baseline;
@@ -35,16 +31,22 @@
       .justify>hr {
         border: none;
         border-top: 1px dotted black;
-        color: #808080;
+        color: #777;
         flex: 1 0 0;
         margin: 1rem .2rem 0;
       }
       .nogrow { flex: 0 0 auto; }
-      .place { color: #808080; font-style: italic; }
+      .place { color: #777; font-style: italic; }
       .rows { display: flex; flex-direction: column; justify-content: space-between; }
-      .subtitle { color: #00aa44; font-size: 110%; margin-bottom: .2rem;}
+      .subtitle { color: #0a4; font-size: 110%; margin: .1rem auto;}
       .title-name { font-size: 160%; font-weight: bold; }
-      .title-email { color: #808080; font-size: 120%; }
+      .title-email { color: #777; font-size: 120%; }
+      @supports not (touch-action: pan-up) {
+        @media print {
+          body { font-size: .9rem; }
+          ul { margin: 0; }
+        }
+      }
     </style>
   </head>
   <body>
@@ -64,13 +66,16 @@
     <div class="columns">
       <div class="rows">
         <div>
-          <span class="company">Google</span>
           <div class="justify">
-            <a href="https://www.gradient.com/">Gradient Ventures</a><hr/>
-            <span>
-              <span class="place">Kirkland, WA&nbsp;</span>
-              <span class="dates">Jul'20 &ndash; present</span>
+            <span class="company">Google</span>
+            <span class="place">
+              New York, NY <span class="emoji">&#x2192;</span>
+              Kirkland, WA <span class="emoji">&#x1f3e0;</span>
             </span>
+          </div>
+          <div class="justify">
+            <a href="https://www.gradient.com/">Gradient Ventures</a>&nbsp;Startup Resident<hr/>
+            <span class="dates">Jul'20 &ndash; &#x2026;</span>
           </div>
           <ul>
             <li>DS / ML Eng @ <a href="https://saymine.com/">Mine</a>,
@@ -82,10 +87,7 @@
           </ul>
           <div class="justify">
             YouTube Music<hr/>
-            <span>
-              <span class="place">New York, NY&nbsp;</span>
-              <span class="dates">Oct'18 &ndash; Jul'20</span>
-            </span>
+            <span class="dates">Oct'18 &ndash; Jul'20</span>
           </div>
           <ul>
             <li>Modeling track-to-track relevance in song radio</li>
@@ -326,7 +328,7 @@
                 <span>
                   <span class="place">România&nbsp;</span>
                   9<sup>th</sup><span class="dates"> &ndash; '03,</span>
-                  &nbsp;10<sup>th</sup><span class="dates"> &ndash; '02</span>
+                  &nbsp;&nbsp;10<sup>th</sup><span class="dates"> &ndash; '02</span>
                 </span>
               </div>
             </li>
