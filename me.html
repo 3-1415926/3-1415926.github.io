@@ -9,6 +9,7 @@
       li:not(.multiline) { white-space: nowrap; }
       sup { display: inline-block; width: 1.8ch; }
       ul { margin: 0 0 .2rem; padding-left: 2ch; }
+      ul.no-bullets { list-style-type: none; padding: 0; }
       .columns { display: flex; }
       .columns>:not(.nogrow) { flex: 1 0 0; }
       .columns>:not(:last-child) { margin-right: 1rem; }
@@ -35,12 +36,14 @@
         flex: 1 0 0;
         margin: 1rem .2rem 0;
       }
+      .missing-flag { margin-left: 1.25rem; }
       .nogrow { flex: 0 0 auto; }
       .place { color: #777; font-style: italic; }
       .rows { display: flex; flex-direction: column; justify-content: space-between; }
       .subtitle { color: #0a4; font-size: 110%; margin: .1rem auto;}
       .title-contact { color: #777; font-size: 120%; }
       .title-name { font-size: 160%; font-weight: bold; }
+      /* Safari hack to accommodate headers and footers when printing */
       @supports not (touch-action: pan-up) {
         @media print {
           body { font-size: .9rem; }
@@ -292,10 +295,10 @@
         <div>
           <div class="header">Contests</div>
           <a href="https://ioinformatics.org/">Olympiads in Informatics</a>:
-          <ul>
+          <ul class="no-bullets">
             <li>
               <div class="justify">
-                <span>International <span class="emoji">&#x1f1f0;&#x1f1f7;</span></span><hr/>
+                <span><span class="emoji">&#x1f1f0;&#x1f1f7;</span> International</span><hr/>
                 <span>
                   <span class="place">South Korea&nbsp;</span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '02</span>
@@ -303,7 +306,7 @@
               </div>
             <li>
               <div class="justify">
-                <span>National <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
+                <span><span class="emoji">&#x1f1fa;&#x1f1e6;</span> National</span><hr/>
                 <span>
                   &#x1f948;2<sup>nd</sup><span class="dates"> &ndash; '02,</span>
                   &#x1f948;2<sup>nd</sup><span class="dates"> &ndash; '01</span>
@@ -312,7 +315,7 @@
             </li>
             <li>
               <div class="justify">
-                Regional<hr/>
+                <span class="missing-flag">Regional</span><hr/>
                 <span>
                   &#x1f947;1<sup>st</sup><span class="dates"> &ndash; '02,</span>
                   &#x1f948;2<sup>nd</sup><span class="dates"> &ndash; '01,</span>
@@ -322,10 +325,10 @@
             </li>
           </ul>
           <a href="https://icpc.global/">ACM ICPC</a>:
-          <ul>
+          <ul class="no-bullets">
             <li>
               <div class="justify">
-                <span>SE Europe <span class="emoji">&#x1f1f7;&#x1f1f4;</span></span><hr/>
+                <span><span class="emoji">&#x1f1f7;&#x1f1f4;</span> SE Europe</span><hr/>
                 <span>
                   <span class="place">România&nbsp;</span>
                   9<sup>th</sup><span class="dates"> &ndash; '03,</span>
@@ -335,7 +338,7 @@
             </li>
             <li>
               <div class="justify">
-                <span>National Cup <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
+                <span><span class="emoji">&#x1f1fa;&#x1f1e6;</span> National Cup</span><hr/>
                 <span> 
                   &#x1f3c6;1<sup>st</sup><span class="dates"> &ndash; '03,</span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '04</span>
@@ -344,7 +347,7 @@
             </li>
             <li>
               <div class="justify">
-                <span>National <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
+                <span><span class="emoji">&#x1f1fa;&#x1f1e6;</span> National</span><hr/>
                 <span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '04,</span>
                   &#x1f949;3<sup>rd</sup><span class="dates"> &ndash; '03,</span>
@@ -354,7 +357,7 @@
             </li>
             <li>
               <div class="justify">
-                Regional<hr/>
+                <span class="missing-flag">Regional</span><hr/>
                 <span>
                   &#x1f947;1<sup>st</sup><span class="dates"> &ndash; '04,</span>
                   &#x1f947;1<sup>st</sup><span class="dates"> &ndash; '03</span>
@@ -363,16 +366,16 @@
             </li>
           </ul>
           <i>Problem setter:</i>
-          <ul>
+          <ul class="no-bullets">
             <li>
               <div class="justify">
-                <span>National Olympiad in Informatics <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
+                <span><span class="emoji">&#x1f1fa;&#x1f1e6;</span> National Olympiad in Informatics</span><hr/>
                 <span class="dates">'03, '05, '07</span>
               </div>
             </li>
             <li>
               <div class="justify">
-                <span>National Cup <span class="emoji">&#x1f1fa;&#x1f1e6;</span></span><hr/>
+                <span><span class="emoji">&#x1f1fa;&#x1f1e6;</span> National Cup</span><hr/>
                 <span class="dates">'03, '04</span>
               </div>
             </li>
