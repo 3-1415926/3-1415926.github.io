@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700" rel="stylesheet">
     <style>
-      html { font-family: 'Nunito', sans-serif; font-size: calc(1in / 6); }
       body>div { margin: auto; min-width: 8in; max-width: 8in; }
+      html { font-family: 'Nunito', sans-serif; font-size: calc(1in / 6); }
       li:not(.multiline) { white-space: nowrap; }
       sup { display: inline-block; width: 1.8ch; }
       ul { margin: 0 0 .2rem; padding-left: 2ch; }
@@ -43,8 +43,10 @@
       .subtitle { color: #0a4; font-size: 110%; margin: .1rem auto;}
       .title-contact { color: #777; font-size: 120%; }
       .title-name { font-size: 160%; font-weight: bold; }
-      /* Safari hack to accommodate headers and footers when printing */
+      @media print { .missing-flag { margin-left: 1.55rem; } }
       @supports not (touch-action: pan-up) {
+        .missing-flag { margin-left: 1.55rem; }
+        /* Safari hack to accommodate headers and footers when printing */
         @media print {
           body { font-size: .9rem; }
           ul { margin: 0; }
