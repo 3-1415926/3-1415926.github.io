@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700" rel="stylesheet">
     <style>
+      a[href^="mailto:"] { color: #777; text-decoration: none; }
       body>div { margin: auto; min-width: 8in; max-width: 8in; }
       html { font-family: 'Nunito', sans-serif; font-size: calc(1in / 6); }
       li:not(.multiline) { white-space: nowrap; }
@@ -36,12 +37,15 @@
         flex: 1 0 0;
         margin: 1rem .2rem 0;
       }
+      .name { color: black; font-size : 133%; font-weight: bold; }
       .nogrow { flex: 0 0 auto; }
       .place { color: #777; font-style: italic; }
       .rows { display: flex; flex-direction: column; justify-content: space-between; }
       .subtitle { color: #0a4; font-size: 110%; }
-      .title-contact { color: #777; font-size: 120%; }
-      .title-name { font-size: 160%; font-weight: bold; }
+      .title { color: #777; font-size: 120%; }
+      @media print {
+        .noprint { display: none; }
+      }
       /* Safari hack to accommodate headers and footers when printing */
       @supports (hanging-punctuation: force-end) {
         @media print {
@@ -52,10 +56,11 @@
     </style>
   </head>
   <body>
-    <div class="justify">
-      <span class="title-name">Andriy Stasyuk</span>
-      <span class="title-contact"><a href="https://linkedin.com/in/stasyuk">linkedin.com/in/stasyuk</a></span>
-      <span class="title-contact">and.stasyuk@gmail.com</span>
+    <div class="justify title">
+      <span class="name">Andriy Stasyuk</span>
+      <a href="https://linkedin.com/in/stasyuk">linkedin.com/in/stasyuk</a>
+      <span class="noprint">[<a href="andriy-stasyuk-cv.pdf">pdf</a>]</span>
+      <a href="mailto:and.stasyuk@gmail.com">and.stasyuk@gmail.com</a>
     </div>
     <div class="columns subtitle">
       <span class="justify">
@@ -390,7 +395,6 @@
             <span>Python</span>
             <span>C++</span>
             <span>C#</span>
-            <span>JavaScript</span>
           </div>
         </div>
         <div>
