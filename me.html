@@ -40,6 +40,7 @@
       .name { color: black; font-size : 133%; font-weight: bold; }
       .nogrow { flex: 0 0 auto; }
       .place { color: #777; font-style: italic; }
+      .place:not(:last-child) { margin-right: .3rem; }
       .rows { display: flex; flex-direction: column; justify-content: space-between; }
       .subtitle { color: #0a4; font-size: 110%; }
       .title { color: #777; font-size: 120%; }
@@ -80,14 +81,14 @@
         <div>
           <div class="justify">
             <span class="company">Google</span>
-            <span class="place">
-              New York, NY <span class="emoji">&#x2192;</span>
-              Kirkland, WA <span class="emoji">&#x1f3e0;</span>
+            <span>
+              <span class="place">New York, NY<span class="emoji">&#x2192;</span>Kirkland, WA</span>
+              <span class="dates"><b>since 2014</b></span>
             </span>
           </div>
           <div class="justify">
             <a href="https://www.gradient.com/">Gradient Ventures</a>&nbsp;Startup Resident<hr/>
-            <span class="dates">Jul'20&ndash;&#x2026;</span>
+            <span class="dates">Jul'20&ndash;now</span>
           </div>
           <ul>
             <li>DS / ML Eng @ <a href="https://saymine.com/">Mine</a>,
@@ -125,7 +126,10 @@
         <div>
           <div class="justify">
             <span class="company">Microsoft</span>
-            <span class="place">Redmond, WA</span>
+            <span>
+              <span class="place">Redmond, WA</span>
+              <span class="dates"><b>2011&ndash;2014</b></span>
+            </span>
           </div>
           <div class="justify">
             .NET native toolchain<hr/>
@@ -154,10 +158,13 @@
         <div>
           <div class="justify">
             <span class="company">Deutsche Bank</span>
-            <span class="place">Saint Petersburg, RU</span>
+            <span>
+              <span class="place">St. Petersburg, RU</span>
+              <span class="dates"><b>2011</b></span>
+            </span>
           </div>
           <div class="justify">
-            AVP, Global Tech Capital<hr/>
+            Assistant VP, Global Tech Capital<hr/>
             <span class="dates">Aug'11&ndash;Sep'11</span>
           </div>
           <ul>
@@ -166,37 +173,37 @@
         </div>
         <div>
           <div class="justify">
-            <span class="company">Broadridge / Paladyne</span>
-            <span class="place">Saint Petersburg, RU</span>
+            <span class="company">Broadridge</span>
+            <span>
+              <span class="place">St. Petersburg, RU</span>
+              <span class="dates"><b>2008&ndash;2011</b></span>
+            </span>
           </div>
           <div class="justify">
-            Portfolio Master<hr/>
+            Paladyne Portfolio Master<hr/>
             <span class="dates">Aug'08&ndash;Jul'11</span>
           </div>
           <ul>
-            <li>Derivative securities price modeling</li>
-            <li>20x speedup to team build process</li>
+            <li>Price modeling for derivative securities</li>
+            <li>Continuous integration; 20x build speedup</li>
           </ul>
         </div>
         <div>
           <div class="justify">
-            <span class="company">Prostobank</span><hr/>
+            <span class="company">Prostobank</span>
             <span>
-              <span class="place">Kyiv, UA&nbsp;</span>
-              <span class="dates">Oct'07&ndash;Aug'08</span>
+              <span class="place">Kyiv, UA</span>
+              <span class="dates"><b>Oct'07&ndash;Aug'08</b></span>
             </span>
           </div>
           <ul>
-            <li>Architected a data management solution</li>
+            <li>Architected the core data management backend</li>
           </ul>
         </div>
-        <div>
+        <div class="work">
           <div class="justify">
-            <span class="company">Freelancer.com</span><hr/>
-            <span>
-              <span class="place">Earth</span>
-              <span class="dates">Mar'07&ndash;Nov'07</span>
-            </span>
+            <span class="company">Freelancer.com</span>
+            <span class="dates"><b>Mar'07&ndash;Nov'07</b></span>
           </div>
           <ul>
             <li>Poker probability calculator, heavily optimized</li>
@@ -204,10 +211,10 @@
         </div>
         <div>
           <div class="justify">
-            <span class="company">i.LEVEL</span><hr/>
+            <span class="company">i.LEVEL</span>
             <span>
-              <span class="place">London, UK&nbsp;</span>
-              <span class="dates">Nov'05&ndash;Oct'06</span>
+              <span class="place">London, UK</span>
+              <span class="dates"><b>Nov'05&ndash;Oct'06</b></span>
             </span>
           </div>
           <ul>
@@ -216,10 +223,10 @@
         </div>
         <div>
           <div class="justify">
-            <span class="company">Anahoret</span><hr/>
+            <span class="company">Anahoret</span>
             <span>
-              <span class="place">Donetsk, UA&nbsp;</span>
-              <span class="dates">Feb'04&ndash;Jun'04</span>
+              <span class="place">Donetsk, UA</span>
+              <span class="dates"><b>Feb'04&ndash;Jun'04</b></span>
             </span>
           </div>
           <ul>
@@ -308,7 +315,7 @@
               <div class="justify">
                 <span><span class="emoji">&#x1f1f0;&#x1f1f7;</span> International</span><hr/>
                 <span>
-                  <span class="place">South Korea&nbsp;</span>
+                  <span class="place">South Korea</span>
                   &#x1f949;3<sup>rd</sup><span class="dates">&mdash;'02</span>
                 </span>
               </div>
@@ -338,7 +345,7 @@
               <div class="justify">
                 <span><span class="emoji">&#x1f1f7;&#x1f1f4;</span> SE Europe</span><hr/>
                 <span>
-                  <span class="place">România&nbsp;</span>
+                  <span class="place">România</span>
                   9<sup>th</sup><span class="dates">&mdash;'03,</span>
                   &nbsp;&nbsp;10<sup>th</sup><span class="dates">&mdash;'02</span>
                 </span>
@@ -402,7 +409,7 @@
           <div class="header">Education</div>
           <div class="justify">
             NW State Technical University
-            <span class="place">S. Petersburg, RU</span>
+            <span class="place">St. Petersburg, RU</span>
           </div>
           <ul>
             <li>
