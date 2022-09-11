@@ -42,6 +42,7 @@
       .place { color: #777; font-style: italic; }
       .place:not(:last-child) { margin-right: .3rem; }
       .rows { display: flex; flex-direction: column; justify-content: space-between; }
+      .spacer { visibility: hidden; }
       .subtitle { color: #0a4; font-size: 110%; }
       .title { color: #777; font-size: 120%; }
       @media print {
@@ -160,7 +161,7 @@
             <span class="company">Deutsche Bank</span>
             <span>
               <span class="place">St. Petersburg, RU</span>
-              <span class="dates"><b>2011</b></span>
+              <span class="dates"><b><span class="spacer">2011&ndash;</span>2011</b></span>
             </span>
           </div>
           <div class="justify">
@@ -330,7 +331,7 @@
             </li>
             <li>
               <div class="justify">
-                <span><span class="emoji">&#x1f3c1;</span> Regional</span><hr/>
+                <span><span class="emoji spacer">&#x1f3c1;</span> Regional</span><hr/>
                 <span>
                   &#x1f947;1<sup>st</sup><span class="dates">&mdash;'02,</span>
                   &#x1f948;2<sup>nd</sup><span class="dates">&mdash;'01,</span>
@@ -372,7 +373,7 @@
             </li>
             <li>
               <div class="justify">
-                <span><span class="emoji">&#x1f3c1;</span> Regional</span><hr/>
+                <span><span class="emoji spacer">&#x1f3c1;</span> Regional</span><hr/>
                 <span>
                   &#x1f947;1<sup>st</sup><span class="dates">&mdash;'04,</span>
                   &#x1f947;1<sup>st</sup><span class="dates">&mdash;'03</span>
