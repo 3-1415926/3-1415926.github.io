@@ -2,8 +2,8 @@
   <head>
     <style>
       table {
-        height: 99vh;
-        width: calc(99vh / var(--proportion));
+        height: 98vh;
+        width: calc(98vh / var(--proportion));
         border-collapse: collapse;
         margin: auto;
         line-height: 0;
@@ -42,7 +42,7 @@
         ['\u{1f436}', '\u{1f9b4}'],
       ];
 
-      const proportion = 11 / 8.5;
+      const proportion = (11-.5) / (8.5-.5);
       const params = new URLSearchParams(window.location.search);
 
       const density = parseFloat(params.get('density') ?? 40);
