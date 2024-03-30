@@ -1,14 +1,6 @@
 import asyncio
+from common import canvas, ctx, put_points
 import numpy as np
-from pyscript import document
-
-canvas = document.getElementById("canvas")
-ctx = canvas.getContext("2d")
-
-def put_points(image_data, xs: np.ndarray, ys: np.ndarray):
-    BYTES_PER_PIXEL = 4
-    for x, y in zip(xs, ys):
-        image_data.data[int(y) * image_data.width * BYTES_PER_PIXEL + int(x) * BYTES_PER_PIXEL + BYTES_PER_PIXEL - 1] = 255
 
 async def draw_sierpinsky(vert_x: list[float], vert_y: list[float], *, num_points=10000, num_iterations=100, w1=1, w2=1):
     vert_x, vert_y = np.array(vert_x) * canvas.width, np.array(vert_y) * canvas.height
