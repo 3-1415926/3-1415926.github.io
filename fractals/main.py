@@ -1,6 +1,6 @@
 import asyncio
 import numpy as np
-from pyscript import document, window
+from pyscript import document
 
 BYTES_PER_PIXEL = 4
 
@@ -28,6 +28,6 @@ async def draw_sierpinsky(vert_x: list[float], vert_y: list[float], *, num_point
         await asyncio.sleep(0)
 
 asyncio.ensure_future(draw_sierpinsky(
-    # [0, .5, 1], [1,  0, 1]
-    [0, 0, 1, 1, .5,  1, .5, 0], [0, 1, 1, 0,  0, .5, 1, .5], w2=2
+    # [0, .5, 1], [1,  0, 1]  # Triangle
+    [0, 0, 1, 1, .5,  1, .5, 0], [0, 1, 1, 0,  0, .5, 1, .5], w2=2  # Square
 ))
