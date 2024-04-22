@@ -37,9 +37,10 @@
         flex: 1 0 0;
         margin: 1rem .2rem 0;
       }
+      .month { font-size: 80%; }
       .name { color: black; font-size : 133%; font-weight: bold; }
       .nogrow { flex: 0 0 auto; }
-      .place { color: #777; font-style: italic; }
+      .place { color: #777; font-weight: lighter; }
       .place:not(:last-child) { margin-right: .3rem; }
       .rows { display: flex; flex-direction: column; justify-content: space-between; }
       .spacer { visibility: hidden; }
@@ -74,33 +75,43 @@
       <span class="justify">
         <span>Competitive Programmer</span>
         <span>&mdash;</span>
-        <span>Dropout MD</span>
+        <span>Dropout MD <span class="emoji">&#x2695;</span></span>
       </span>
     </div>
     <div class="columns">
       <div class="rows">
         <div>
           <div class="justify">
+            <span class="company">Snowflake</span>
+            <span>
+              <span class="place">Bellevue, WA</span>
+              <span class="dates"><b><span class="month">02/</span>2023&ndash;present</b></span>
+            </span>
+          </div>
+          <a href="https://docs.snowflake.com/en/user-guide/snowflake-cortex/overview">Cortex</a> &mdash; AutoML functions for tabular data
+        </div>
+        <div>
+          <div class="justify">
             <span class="company">Google</span>
             <span>
-              <span class="place">New York, NY<span class="emoji">&#x2192;</span>Kirkland, WA</span>
-              <span class="dates"><b>since 2014</b></span>
+              <span class="place">New York, NY<span class="emoji"> &#x2192;</span>WA</span>
+              <span class="dates"><b><span class="month">10/</span>2014&ndash;<span class="month">03/</span>2023</b></span>
             </span>
           </div>
           <div class="justify">
             <a href="https://www.gradient.com/">Gradient Ventures</a>&nbsp;Startup Resident<hr/>
-            <span class="dates">Jul'20&ndash;now</span>
+            <span class="dates"><span class="month">07/</span>20&ndash;<span class="month">03/</span>23</span>
           </div>
           <ul>
-            <li>Privacy reclaim recommender system for <a href="https://saymine.com/">Mine</a></li>
-            <li class="multiline">Head of ML @ <a href="https://www.typingdna.com/">TypingDNA</a>,
-              <a href="https://www.typingdna.com/activelock-continuous-authentication">continuous auth</a>
-              and <a href="https://www.typingdna.com/focus">emotion recognition</a>
-              using <a href="https://public-research.typingdna.com/">keystroke dynamics</a></li>
+            <li><a href="https://saymine.com/">Mine</a> &mdash; privacy reclaim recommender system</li>
+            <li class="multiline">
+              <a href="https://www.typingdna.com/">TypingDNA</a>, <em>head of ML</em> &mdash; <a href="https://www.typingdna.com/activelock-continuous-authentication">continuous auth</a> &amp;
+              <a href="https://www.typingdna.com/focus">emotion recognition</a> via keystroke dynamics
+            </li>
           </ul>
           <div class="justify">
             YouTube Music<hr/>
-            <span class="dates">Oct'18&ndash;Jul'20</span>
+            <span class="dates"><span class="month">10/</span>18&ndash;<span class="month">07/</span>20</span>
           </div>
           <ul>
             <li>Song relevance modeling &amp; dataset acquisition</li>
@@ -108,7 +119,7 @@
           </ul>
           <div class="justify">
             <span><a href="https://magenta.tensorflow.org/">Magenta</a> / ML Ninja &#x1f977;</span><hr/>
-            <span class="dates">Jan'18&ndash;Oct'18</span>
+            <span class="dates"><span class="month">01/</span>18&ndash;<span class="month">10/</span>18</span>
           </div>
           <ul>
             <li class="multiline">Distributed processing pipeline to align 200+ hours of audio / MIDI for the <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a> dataset</li>
@@ -116,10 +127,10 @@
           </ul>
           <div class="justify">
             Google Maps<hr/>
-            <span class="dates">Oct'14&ndash;Jan'18</span>
+            <span class="dates"><span class="month">10/</span>14&ndash;<span class="month">01/</span>18</span>
           </div>
           <ul>
-            <li class="multiline">Reengineering lifecycle management of <i>all</i> external user edits to scale up moderation</li>
+            <li class="multiline">Reengineering lifecycle management of <em>all</em> external user edits to scale up moderation</li>
           </ul>
         </div>
         <div>
@@ -127,19 +138,19 @@
             <span class="company">Microsoft</span>
             <span>
               <span class="place">Redmond, WA</span>
-              <span class="dates"><b>2011&ndash;2014</b></span>
+              <span class="dates"><b><span class="month">10/</span>2011&ndash;<span class="month">09/</span>2014</b></span>
             </span>
           </div>
           <div class="justify">
             .NET Native Toolchain<hr/>
-            <span class="dates">May'14&ndash;Sep'14</span>
+            <span class="dates"><span class="month">05/</span>14&ndash;<span class="month">09/</span>14</span>
           </div>
           <ul>
-            <li>Making managed apps run w/o .NET runtime</li>
+            <li>Making managed apps execute w/o .NET runtime</li>
           </ul>
           <div class="justify">
             Managed Languages<hr/>
-            <span class="dates">Sep'12&ndash;May'14</span>
+            <span class="dates"><span class="month">09/</span>12&ndash;<span class="month">05/</span>14</span>
           </div>
           <ul>
             <li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">Async / await</a>
@@ -148,7 +159,7 @@
           </ul>
           <div class="justify">
             Visual Studio, Project & Build<hr/>
-            <span class="dates">Oct'11&ndash;Sep'12</span>
+            <span class="dates"><span class="month">10/</span>11&ndash;<span class="month">09/</span>12</span>
           </div>
           <ul>
             <li>Fuzz, scalability, endurance testing</li>
@@ -159,40 +170,27 @@
             <span class="company">Deutsche Bank</span>
             <span>
               <span class="place">St. Petersburg, RU</span>
-              <span class="dates"><b><span class="spacer">2011&ndash;</span>2011</b></span>
+              <span class="dates"><b><span class="month">08&ndash;09/</span>2011</b></span>
             </span>
           </div>
-          <div class="justify">
-            Assistant VP, Global Tech Capital<hr/>
-            <span class="dates">Aug'11&ndash;Sep'11</span>
-          </div>
-          <ul>
-            <li>Reimplementing the FX trading platform</li>
-          </ul>
+          Global Tech Capital, <em>AVP</em> &mdash; FX trading platform
         </div>
         <div>
           <div class="justify">
             <span class="company">Broadridge</span>
             <span>
               <span class="place">St. Petersburg, RU</span>
-              <span class="dates"><b>2008&ndash;2011</b></span>
+              <span class="dates"><b><span class="month">08/</span>2008&ndash;<span class="month">07/</span>2011</b></span>
             </span>
           </div>
-          <div class="justify">
-            Paladyne Portfolio Master<hr/>
-            <span class="dates">Aug'08&ndash;Jul'11</span>
-          </div>
-          <ul>
-            <li>Price modeling for derivative securities</li>
-            <li>Continuous integration; 20x build speedup</li>
-          </ul>
+          <a href="https://www.broadridge.com/fact-sheet/broadridge-portfolio-master">Portfolio Master</a> &mdash; derivative price modeling
         </div>
         <div>
           <div class="justify">
             <span class="company">Prostobank</span>
             <span>
               <span class="place">Kyiv, UA</span>
-              <span class="dates"><b>Oct'07&ndash;Aug'08</b></span>
+              <span class="dates"><b><span class="month">10/</span>2007&ndash;<span class="month">08/</span>2008</b></span>
             </span>
           </div>
           <ul>
@@ -202,7 +200,7 @@
         <div class="work">
           <div class="justify">
             <span class="company">Freelancer.com</span>
-            <span class="dates"><b>Mar'07&ndash;Nov'07</b></span>
+            <span class="dates"><b><span class="month">03/</span>2007&ndash;<span class="month">11/</span>2007</b></span>
           </div>
           <ul>
             <li>Poker probability calculator, heavily optimized</li>
@@ -213,7 +211,7 @@
             <span class="company">i.LEVEL</span>
             <span>
               <span class="place">London, UK</span>
-              <span class="dates"><b>Nov'05&ndash;Oct'06</b></span>
+              <span class="dates"><b><span class="month">11/</span>2005&ndash;<span class="month">10/</span>2006</b></span>
             </span>
           </div>
           <ul>
@@ -225,7 +223,7 @@
             <span class="company">Anahoret</span>
             <span>
               <span class="place">Donetsk, UA</span>
-              <span class="dates"><b>Feb'04&ndash;Jun'04</b></span>
+              <span class="dates"><b><span class="month">02/</span>2004&ndash;<span class="month">06/</span>2004</b></span>
             </span>
           </div>
           <ul>
@@ -242,7 +240,7 @@
                 <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a> Dataset.<br/>
               <div class="justify">
                 <span>[<a href="https://arxiv.org/abs/1810.12247">arXiv:1810.12247</a>]</span><hr/>
-                <span><a href="https://openreview.net/forum?id=r1lYRjC9F7">ICLR'19</a> oral, <i><b>top 1.5%</b></i></span>
+                <span><a href="https://openreview.net/forum?id=r1lYRjC9F7">ICLR'19</a> oral, <em>top 1.5%</em></span>
               </div>
             </li>
             <li>
@@ -282,7 +280,7 @@
         </div>
         <div>
           <div class="header">Teaching ML & CS</div>
-          Google and <a href="https://capitalg.com/">CapitalG</a> startups (up to 80+ people):
+          Google and <a href="https://capitalg.com/">CapitalG</a> startups (up to 80+ students):
           <div class="columns">
             <ul>
               <li><a href="https://developers.google.com/machine-learning/recommendation">Recommendation systems</a></li>
@@ -379,7 +377,7 @@
               </div>
             </li>
           </ul>
-          <i>Problem setter</i>, jury, coach:
+          <em>Problem setter</em>, jury, coach:
           <ul class="no-bullets">
             <li>
               <div class="justify">
@@ -425,7 +423,7 @@
           <ul>
             <li>
               <div class="justify">
-                <span><i>Medicine</i> <span class="emoji">&#x2695;</span></span><hr/>
+                <span><em>Medicine</em> <span class="emoji">&#x2695;</span></span><hr/>
                 <span class="dates">2004&ndash;2008</span>
               </div>
             </li>
