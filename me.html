@@ -22,7 +22,7 @@
         font-size: 110%;
         font-weight: bold;
         text-transform: uppercase;
-        margin-top: .3rem;
+        margin: .3rem 0 .1rem;
       }
       .justify { 
         align-items: baseline;
@@ -44,7 +44,7 @@
       .place:not(:last-child) { margin-right: .3rem; }
       .rows { display: flex; flex-direction: column; justify-content: space-between; }
       .spacer { visibility: hidden; }
-      .subtitle { color: #0a4; font-size: 110%; }
+      .subtitle { color: #0a4; font-size: 110%; padding: .2rem 0; }
       .title { color: #777; font-size: 120%; }
       @media print {
         .noprint { display: none; }
@@ -94,7 +94,7 @@
           <div class="justify">
             <span class="company">Google</span>
             <span>
-              <span class="place">New York, NY<span class="emoji"> &#x2192;</span>WA</span>
+              <span class="place">New York, NY &#x2192; WA</span>
               <span class="dates"><b><span class="month">10/</span>2014&ndash;<span class="month">03/</span>2023</b></span>
             </span>
           </div>
@@ -394,15 +394,6 @@
           </ul>
         </div>
         <div>
-          <div class="header">Technology</div>
-          <div class="justify">
-            <span>TensorFlow</span>
-            <span>Python</span>
-            <span>C++</span>
-            <span>C#</span>
-          </div>
-        </div>
-        <div>
           <div class="header">Education</div>
           <div class="justify">
             NW State Technical University
@@ -434,10 +425,8 @@
           </div>
           <ul>
             <li>
-              <div class="justify">
-                Computer Eng. & Sys. Programming<hr/>
-                <span class="dates">2002&ndash;2007</span>
-              </div>
+              Computer Engineering<br>
+              <div class="justify">& System Programming<hr/><span class="dates">2002&ndash;2007</span></div>
             </li>
           </ul>
         </div>
