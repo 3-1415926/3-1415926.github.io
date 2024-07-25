@@ -6,6 +6,7 @@
     <style>
       a[href^="mailto:"] { color: #777; text-decoration: none; }
       body>div { margin: auto; min-width: 8in; max-width: 8in; }
+      div:last-child { padding-bottom: .05rem; }
       html { font-family: 'Nunito', sans-serif; font-size: calc(1in / 6); }
       li:not(.multiline) { white-space: nowrap; }
       sup { display: inline-block; width: 1.8ch; }
@@ -17,6 +18,7 @@
       .company { font-size: 110%; font-weight: bold; margin-top: .3rem; }
       .dates { font-weight: lighter; }      
       .emoji { font-style: normal; }
+      .grey { color: #777; }
       .header {
         color: #0a4;
         font-size: 110%;
@@ -52,7 +54,7 @@
       /* Safari hack to accommodate headers and footers when printing */
       @supports (hanging-punctuation: force-end) {
         @media print {
-          body { font-size: .9rem; }
+          body { font-size: .89rem; }
           ul { margin: 0; }
         }
       }
@@ -67,15 +69,18 @@
     </div>
     <div class="columns subtitle">
       <span class="justify">
-        <span>ML Engineer</span>
-        <span>&mdash;</span>
-        <span>Educator &amp; Coach</span>
-        <span>&mdash;&nbsp;&nbsp;&nbsp;</span>
-      </span>
-      <span class="justify">
-        <span>Competitive Programmer</span>
-        <span>&mdash;</span>
-        <span>Dropout MD <span class="emoji">&#x2695;</span></span>
+        <span>
+          <span>ML Engineer</span>
+          <span>&nbsp;&mdash;&nbsp;</span>
+          <span>Educator &amp; Coach</span>
+          <span>&nbsp;&mdash;&nbsp;</span>
+          <span>Competitive Programmer</span>
+        </span>
+        <span>
+          <span class="grey">Musician</span>
+          <span class="grey">&mdash;</span>
+          <span class="grey">Dropout MD <span class="emoji">&#x2695;</span></span>
+        </span>
       </span>
     </div>
     <div class="columns">
@@ -88,7 +93,7 @@
               <span class="dates"><b><span class="month">02/</span>2023&ndash;<span class="month">05/</span>2024</b></span>
             </span>
           </div>
-          <a href="https://docs.snowflake.com/en/user-guide/snowflake-cortex/overview">Cortex</a> &mdash; AutoML functions for tabular data
+          <a href="https://docs.snowflake.com/en/guides-overview-ai-features">Cortex & ML functions</a> &mdash; AutoML on tabular data
         </div>
         <div>
           <div class="justify">
@@ -107,9 +112,9 @@
             <span class="dates"><span class="month">07/</span>20&ndash;<span class="month">10/</span>22</span>
           </div>
           <ul>
-            <li><a href="https://saymine.com/">Mine</a> &mdash; privacy reclaim recommender system</li>
+            <li><a href="https://saymine.com/">Mine</a> &mdash; privacy-focused recommendation system</li>
             <li class="multiline">
-              <em>Head of ML</em> @ <a href="https://www.typingdna.com/">TypingDNA</a> &mdash; <a href="https://www.typingdna.com/activelock-continuous-authentication">continuous auth</a> &amp;
+              Head of ML @ <a href="https://www.typingdna.com/">TypingDNA</a> &mdash; <a href="https://www.typingdna.com/activelock-continuous-authentication">continuous auth</a> &amp;
               <a href="https://www.typingdna.com/focus">emotion recognition</a> via keystroke dynamics
             </li>
           </ul>
@@ -118,16 +123,15 @@
             <span class="dates"><span class="month">10/</span>18&ndash;<span class="month">07/</span>20</span>
           </div>
           <ul>
-            <li>Song relevance modeling &amp; dataset acquisition</li>
-            <li>Collaborative filtering for radio recommendations</li>
+            <li class="multiline">Radio recommendations &mdash; track relevance modeling, data collection, experiment design</li>
           </ul>
           <div class="justify">
             <span><a href="https://magenta.tensorflow.org/">Magenta</a> / ML Ninja &#x1f977;</span><hr/>
             <span class="dates"><span class="month">01/</span>18&ndash;<span class="month">10/</span>18</span>
           </div>
           <ul>
+            <li>Generative AI, speech and music synthesis</li>
             <li>Distributed processing for <a href="https://magenta.tensorflow.org/datasets/maestro">MAESTRO</a> dataset</li>
-            <li>Generative audio synthesis, reharmonization</li>
           </ul>
           <div class="justify">
             Google Maps<hr/>
@@ -157,8 +161,7 @@
             <span class="dates"><span class="month">09/</span>12&ndash;<span class="month">05/</span>14</span>
           </div>
           <ul>
-            <li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">Async / await</a>
-              debugger in Visual Studio</li>
+            <li>Asynchronous code <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/february/async-programming-async-causality-chain-tracking">debugger</a> for Visual Studio</li>
             <li><a href="https://github.com/dotnet/roslyn/wiki/Roslyn+Overview">Roslyn</a>, C# / Visual Basic compiler platform</li>
           </ul>
           <div class="justify">
@@ -166,7 +169,7 @@
             <span class="dates"><span class="month">10/</span>11&ndash;<span class="month">09/</span>12</span>
           </div>
           <ul>
-            <li>Fuzz, scalability, endurance testing</li>
+            <li>Tooling for fuzz, scalability, endurance testing</li>
           </ul>
         </div>
         <div>
@@ -177,7 +180,7 @@
               <span class="dates"><b><span class="month">08&ndash;09/</span>2011</b></span>
             </span>
           </div>
-          <em>AVP</em> @ Global Tech Capital &mdash; FX trading platform
+          <div>AVP @ Global Tech Capital &mdash; FX trading platform</div>
         </div>
         <div>
           <div class="justify">
@@ -187,7 +190,7 @@
               <span class="dates"><b><span class="month">08/</span>2008&ndash;<span class="month">07/</span>2011</b></span>
             </span>
           </div>
-          <a href="https://www.broadridge.com/fact-sheet/broadridge-portfolio-master">Portfolio Master</a> &mdash; derivative price modeling
+          <div><a href="https://www.broadridge.com/fact-sheet/broadridge-portfolio-master">Portfolio Master</a> &mdash; derivative price modeling</div>
         </div>
         <div>
           <div class="justify">
@@ -197,18 +200,14 @@
               <span class="dates"><b><span class="month">10/</span>2007&ndash;<span class="month">08/</span>2008</b></span>
             </span>
           </div>
-          <ul>
-            <li>Architected consumer finance analytics backend</li>
-          </ul>
+          <div>Architect for consumer finance analytics backend</div>
         </div>
         <div class="work">
           <div class="justify">
             <span class="company">Freelancer.com</span>
             <span class="dates"><b><span class="month">03/</span>2007&ndash;<span class="month">11/</span>2007</b></span>
           </div>
-          <ul>
-            <li>Poker probability calculator, heavily optimized</li>
-          </ul>
+          <div>Poker probability calculator, heavily optimized</div>
         </div>
         <div>
           <div class="justify">
@@ -218,9 +217,7 @@
               <span class="dates"><b><span class="month">11/</span>2005&ndash;<span class="month">10/</span>2006</b></span>
             </span>
           </div>
-          <ul>
-            <li>Content and document management system</li>
-          </ul>
+          <div>Content and document management system</div>
         </div>
         <div>
           <div class="justify">
@@ -230,9 +227,7 @@
               <span class="dates"><b><span class="month">02/</span>2004&ndash;<span class="month">06/</span>2004</b></span>
             </span>
           </div>
-          <ul>
-            <li>Full-stack web development</li>
-          </ul>
+          <div>Full-stack web development</div>
         </div>
       </div>
       <div class="rows">
@@ -424,7 +419,7 @@
           <ul>
             <li>
               <div class="justify">
-                <span><em>Medicine</em> <span class="emoji">&#x2695;</span></span><hr/>
+                <span><em>General Medicine</em> <span class="emoji">&#x2695;</span></span><hr/>
                 <span class="dates">2004&ndash;2008</span>
               </div>
             </li>
